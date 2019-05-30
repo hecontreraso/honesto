@@ -1,0 +1,16 @@
+.person-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(172, 177, 182, 0.33);
+  display: flex;
+  padding: 1em;
+  width: 100%;
+  justify-content: space-between;
+
+  .image {
+    padding-right: 1.5em;
+  }
+  .left {
+    display: inherit;
+    align-items: center;
+  }
+}
