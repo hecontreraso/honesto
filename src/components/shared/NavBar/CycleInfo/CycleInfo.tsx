@@ -1,7 +1,7 @@
 import React from "react";
 import "./CycleInfo.scss";
 
-const NextFeedback: React.FC = () => {
+const CycleInfo: React.FC = () => {
   return (
     <div className="navbar-item cycle-info">
       <span className="top">Next Feedback Cycle:</span>
@@ -12,4 +12,4 @@ const NextFeedback: React.FC = () => {
   );
 };
 
-export default NextFeedback;
+export default CycleInfo;

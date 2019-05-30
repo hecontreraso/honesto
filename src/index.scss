@@ -6,6 +6,7 @@
 $honesto-purple: #ab61e5;
 $honesto-black-pearl: #031323;
 $honesto-gray: #59636e;
+$honesto-alabaster: #f2f3f4;
 
 // Bulma customizations
 $family-sans-serif: "Roboto", sans-serif;
@@ -15,7 +16,7 @@ $button-border-color: none;
 $button-color: white;
 $button-padding-horizontal: 1.5em;
 
-$navbar-background-color: #f2f3f4;
+$navbar-background-color: $honesto-alabaster;
 
 // Import the rest of Bulma:
 @import "bulma/bulma.sass";
@@ -25,4 +26,20 @@ body {
   height: 100%;
   margin: 0;
   font-size: 16px;
+}
+
+.button-normal {
+  background-color: white;
+  color: $honesto-black-pearl;
+  border: 1px solid #d9dcde;
+  font-weight: bold;
+  height: 48px;
+  width: 150px;
+}
+
+.button-disabled {
+  background-color: #acb1b6;
+  color: #ffffff;
+  height: 48px;
+  width: 150px;
 }

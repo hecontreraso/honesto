@@ -1,5 +1,6 @@
 import React from "react";
 import "./Question.scss";
+import MultipleOptions from "components/MultipleOptions";
 
 const Question: React.FC = () => {
   return (
@@ -12,12 +13,22 @@ const Question: React.FC = () => {
       </div>
 
       <div className="question-container">
-        <div>Questions</div>
-        <div>Navigation</div>
+        <MultipleOptions />
+        <div className="navigation">
+          <a className="button button-normal">Previous</a>
+          <a className="button button-normal">Skip</a>
+          <a className="button button-disabled">Next</a>
+        </div>
         <div>Progress</div>
-        <div className="level">
-          <div>Footer</div>
-          <div>Footer</div>
+        <div className="question-footer">
+          <div className="left">
+            <div>Questions completed</div>
+            <div>1/17</div>
+          </div>
+          <div className="right">
+            <div>Stars</div>
+            <div>flag</div>
+          </div>
         </div>
       </div>
     </div>
