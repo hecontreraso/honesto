@@ -1,17 +1,21 @@
 @import "index.scss";
 
 .user-item {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-
-  .name {
-    color: $honesto-black-pearl;
+  .photo {
+    margin-right: 1em;
   }
-  .logout {
-    color: #59636e;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-size: 0.66em;
+  .text-container {
+    align-items: flex-start;
+    display: inherit;
+    flex-direction: column;
+    .name {
+      color: $honesto-black-pearl;
+    }
+    .logout {
+      color: #59636e;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.66em;
+    }
   }
 }
