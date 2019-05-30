@@ -22,7 +22,7 @@ const Question: React.FC = () => {
         <div>Progress</div>
         <div className="question-footer">
           <div className="left">
-            <div>Questions completed</div>
+            <div className="label">Questions completed</div>
             <div>1/17</div>
           </div>
           <div className="right">

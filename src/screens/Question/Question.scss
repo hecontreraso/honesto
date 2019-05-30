@@ -1,3 +1,5 @@
+@import "index.scss";
+
 .question-component {
   max-width: 50% !important;
 
@@ -6,6 +8,14 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    .subtitle {
+      color: $honesto-black-pearl;
+      font-size: 0.8em;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.33;
+    }
   }
 
   .question-container {
@@ -26,7 +36,16 @@
       display: flex;
       justify-content: space-between;
       .left {
+        align-items: flex-start;
+        color: $honesto-black-pearl;
+        display: flex;
         flex-direction: column;
+
+        .label {
+          font-size: 0.66em;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        }
       }
     }
   }

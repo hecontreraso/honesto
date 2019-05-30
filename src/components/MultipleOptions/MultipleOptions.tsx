@@ -6,11 +6,13 @@ const MultipleOptions: React.FC = () => {
     <div className="multiple-options-component">
       <div className="question">
         <p>
-          Please Improve You may have done one or the following: Maybe you were
-          mostly quiet in meetings and when you had something on your mind, you
-          brought it to the team afterward. Or, you had feedback that would be
-          valuable to go, but you found it too difficult. Or, you had an
-          opportunity to grow by doing something uncomfortable but you didn’t.
+          Please Improve
+          <br />
+          You may have done one or the following: Maybe you were mostly quiet in
+          meetings and when you had something on your mind, you brought it to
+          the team afterward. Or, you had feedback that would be valuable to go,
+          but you found it too difficult. Or, you had an opportunity to grow by
+          doing something uncomfortable but you didn’t.
         </p>
       </div>
       <div className="question">
