@@ -6,8 +6,10 @@ const Question: React.FC = () => {
   return (
     <div className="container question-component">
       <div className="hero hero-container">
+        <span className="text-small">Back</span>
+        <br />
         <h1 className="title">How well did I display courage?</h1>
-        <h3 className="subtitle">
+        <h3 className="subtitle text-small">
           Share your feedback with Christopher Johnson
         </h3>
       </div>
@@ -22,7 +24,7 @@ const Question: React.FC = () => {
         <div>Progress</div>
         <div className="question-footer">
           <div className="left">
-            <div className="label">Questions completed</div>
+            <div className="label text-small">Questions completed</div>
             <div>1/17</div>
           </div>
           <div className="right">

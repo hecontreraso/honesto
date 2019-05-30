@@ -10,10 +10,7 @@
     flex-direction: column;
     .subtitle {
       color: $honesto-black-pearl;
-      font-size: 0.8em;
       font-weight: bold;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
       opacity: 0.33;
     }
   }
@@ -40,13 +37,12 @@
         color: $honesto-black-pearl;
         display: flex;
         flex-direction: column;
-
-        .label {
-          font-size: 0.66em;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-        }
       }
     }
+  }
+  .text-small {
+    font-size: 0.66em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
 }
