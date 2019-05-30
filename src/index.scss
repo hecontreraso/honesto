@@ -3,9 +3,14 @@
 // Colors
 $honesto-purple: #ab61e5;
 
-// Bulma config
+// Bulma customizations
 $button-background-color: $honesto-purple;
+$button-border-color: none;
 $button-color: white;
+$button-padding-horizontal: 1.5em;
+
+// Import the rest of Bulma:
+@import "bulma/bulma.sass";
 
 html,
 body {
