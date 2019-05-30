@@ -1,6 +1,8 @@
 import React from "react";
-import "./NavBar.scss";
+import { Link } from "react-router-dom";
 
+import "./NavBar.scss";
+import CycleInfo from "./CycleInfo";
 import UserItem from "./UserItem";
 
 const NavBar: React.FC = () => {
@@ -17,6 +19,7 @@ const NavBar: React.FC = () => {
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          href="#"
         >
           <span aria-hidden="true" />
           <span aria-hidden="true" />
@@ -26,13 +29,22 @@ const NavBar: React.FC = () => {
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item">Share feedback</a>
-          <a className="navbar-item">My feedback</a>
-          <a className="navbar-item">Team feedback</a>
-          <a className="navbar-item">Teams</a>
+          <Link className="navbar-item" to="/sharefeedback">
+            Share Feedback
+          </Link>
+          <Link className="navbar-item" to="/myfeedback">
+            My Feedback
+          </Link>
+          <Link className="navbar-item" to="/sharefeedback">
+            Team Feedback
+          </Link>
+          <Link className="navbar-item" to="/myfeedback">
+            Teams
+          </Link>
         </div>
 
         <div className="navbar-end">
+          <CycleInfo />
           <UserItem />
         </div>
       </div>

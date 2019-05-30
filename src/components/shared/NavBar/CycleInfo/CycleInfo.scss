@@ -1,0 +1,18 @@
+@import "index.scss";
+
+.cycle-info {
+  align-items: flex-end !important;
+  flex-direction: column;
+  .top {
+    color: $honesto-gray;
+    font-size: 0.6em;
+    font-weight: bold;
+  }
+  .bottom {
+    color: #59636e;
+    .emphasis {
+      color: #00c29e;
+      font-weight: bold;
+    }
+  }
+}
