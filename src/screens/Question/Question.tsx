@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import "./Question.scss";
 import MultipleOptions from "components/question/MultipleOptions";
 import RangeOptions from "components/question/RangeOptions";
+import TextInput from "components/question/TextInput";
 import Navigation from "components/question/Navigation";
 
 import { QUESTIONS } from "store/questions";
 
 function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(2);
   const [answer, setAnswer] = useState(null);
 
   function renderQuestion() {
@@ -22,7 +23,7 @@ function Question() {
       case "RANGE":
         return <RangeOptions setAnswer={setAnswer} />;
       case "TEXT":
-        break;
+        return <TextInput setAnswer={setAnswer} />;
     }
   }
 

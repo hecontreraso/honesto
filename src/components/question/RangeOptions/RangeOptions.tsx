@@ -38,7 +38,7 @@ const RangeOptions: React.FC<Props> = props => {
           />
         ))}
       </div>
-      <span>8/10</span>
+      <span>{hoveredStep !== -1 ? hoveredStep + 1 : selectedStep + 1}/10</span>
     </div>
   );
 };
