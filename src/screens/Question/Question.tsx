@@ -22,6 +22,10 @@ function Question() {
     }
   }
 
+  function onNextPressed() {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  }
+
   const question = QUESTIONS[currentQuestionIndex];
   return (
     <div className="container question-component">
@@ -37,11 +41,17 @@ function Question() {
       <div className="question-container">
         {renderQuestion()}
         <div className="navigation">
-          <button className="button button-normal">Previous</button>
+          <button
+            className={`button ${currentQuestionIndex == 0}`}
+            disabled={currentQuestionIndex == 0}
+          >
+            Previous
+          </button>
           <button className="button button-normal">Skip</button>
           <button
             className={`button ${answer && "button-normal"}`}
-            disabled={answer ? false : true}
+            disabled={!answer}
+            onClick={onNextPressed}
           >
             Next
           </button>
