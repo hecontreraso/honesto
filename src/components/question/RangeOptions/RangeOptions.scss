@@ -1,5 +1,17 @@
 @import "index.scss";
 
 .range-component {
-  flex-direction: column;
+  text-align: right;
+  width: 100%;
+  .range-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0;
+
+    .step {
+      width: 3.9em;
+      height: 3.9em;
+      background-color: $honesto-alabaster;
+    }
+  }
 }

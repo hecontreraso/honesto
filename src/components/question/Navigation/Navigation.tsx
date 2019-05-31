@@ -23,7 +23,7 @@ function Navigation(props: Props) {
   }
 
   return (
-    <div className="navigation">
+    <div className="navigation-component">
       <button
         className={`button ${currentQuestionIndex !== 0 && "button-normal"}`}
         disabled={currentQuestionIndex === 0}

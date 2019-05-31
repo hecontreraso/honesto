@@ -9,7 +9,7 @@ import Navigation from "components/question/Navigation";
 import { QUESTIONS } from "store/questions";
 
 function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
   const [answer, setAnswer] = useState(null);
 
   function renderQuestion() {
