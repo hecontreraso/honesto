@@ -24,7 +24,7 @@ const MultipleOptions: React.FC<Props> = props => {
     <div className="multiple-options-component">
       {question.options.map((option, index) => (
         <div
-          className={`question ${index == selected && "selected"}`}
+          className={`question ${index === selected && "selected"}`}
           key={index}
           onClick={() => onOptionClicked(index)}
         >

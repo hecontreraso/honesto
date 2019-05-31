@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Question.scss";
-import MultipleOptions from "components/MultipleOptions";
-import RangeOptions from "components/RangeOptions";
+import MultipleOptions from "components/question/MultipleOptions";
+import RangeOptions from "components/question/RangeOptions";
+import Navigation from "components/question/Navigation";
 
 import { QUESTIONS } from "store/questions";
 
@@ -22,15 +24,14 @@ function Question() {
     }
   }
 
-  function onNextPressed() {
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-  }
-
   const question = QUESTIONS[currentQuestionIndex];
   return (
     <div className="container question-component">
       <div className="hero hero-container">
-        <span className="text-small">Back</span>
+        <Link className="text-small" to="/share">
+          Back
+        </Link>
+
         <br />
         <h1 className="title">{question.title}</h1>
         <h3 className="subtitle text-small">
@@ -40,22 +41,12 @@ function Question() {
 
       <div className="question-container">
         {renderQuestion()}
-        <div className="navigation">
-          <button
-            className={`button ${currentQuestionIndex == 0}`}
-            disabled={currentQuestionIndex == 0}
-          >
-            Previous
-          </button>
-          <button className="button button-normal">Skip</button>
-          <button
-            className={`button ${answer && "button-normal"}`}
-            disabled={!answer}
-            onClick={onNextPressed}
-          >
-            Next
-          </button>
-        </div>
+        <Navigation
+          answer={answer}
+          currentQuestionIndex={currentQuestionIndex}
+          setCurrentQuestionIndex={setCurrentQuestionIndex}
+        />
+
         <div>Progress</div>
         <div className="question-footer">
           <div className="left">
