@@ -8,13 +8,13 @@ import { QUESTIONS } from "store/questions";
 
 function Question() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [isNextDisabled, setNextDisabled] = useState(true);
+  const [answer, setAnswer] = useState(null);
 
   function renderQuestion() {
     const question = QUESTIONS[currentQuestionIndex];
     switch (question.type) {
       case "MULTIPLE":
-        return <MultipleOptions question={question} />;
+        return <MultipleOptions question={question} setAnswer={setAnswer} />;
       case "RANGE":
         return <RangeOptions question={question} />;
       case "TEXT":
@@ -39,7 +39,10 @@ function Question() {
         <div className="navigation">
           <button className="button button-normal">Previous</button>
           <button className="button button-normal">Skip</button>
-          <button className="button" disabled>
+          <button
+            className={`button ${answer && "button-normal"}`}
+            disabled={answer ? false : true}
+          >
             Next
           </button>
         </div>

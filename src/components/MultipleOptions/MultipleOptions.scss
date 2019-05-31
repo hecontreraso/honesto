@@ -8,16 +8,19 @@
     background-color: $honesto-alabaster;
     padding: 1em;
     margin-bottom: 1em;
+    cursor: pointer;
     &:hover {
       background-color: $honesto-gray;
       color: #ffffff;
-      cursor: pointer;
     }
     &:active {
       background-color: $honesto-gray;
-      opacity: 0.7;
       color: #ffffff;
-      cursor: pointer;
+      opacity: 0.7;
     }
+  }
+  .selected {
+    background-color: $honesto-gray;
+    color: #ffffff;
   }
 }
