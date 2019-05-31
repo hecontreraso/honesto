@@ -22,6 +22,10 @@
     flex-direction: column;
     padding: 1em;
 
+    .description {
+      text-align: left;
+    }
+
     .navigation {
       display: flex;
       justify-content: space-between;

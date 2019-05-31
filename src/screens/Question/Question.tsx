@@ -24,6 +24,16 @@ function Question() {
     }
   }
 
+  function renderDescription() {
+    if (question.description)
+      return (
+        <>
+          <p className="description">{question.description}</p>
+          <br />
+        </>
+      );
+  }
+
   const question = QUESTIONS[currentQuestionIndex];
   return (
     <div className="container question-component">
@@ -40,6 +50,7 @@ function Question() {
       </div>
 
       <div className="question-container">
+        {renderDescription()}
         {renderQuestion()}
         <Navigation
           answer={answer}

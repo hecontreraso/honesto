@@ -6,7 +6,7 @@
 export interface IQuestion {
   id: number;
   title: string;
-  description: string;
+  description?: string;
   type: "RANGE" | "TEXT" | "MULTIPLE";
   options?: string[];
 }
