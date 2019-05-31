@@ -16,9 +16,11 @@ function Question() {
     const question = QUESTIONS[currentQuestionIndex];
     switch (question.type) {
       case "MULTIPLE":
-        return <MultipleOptions question={question} setAnswer={setAnswer} />;
+        return (
+          <MultipleOptions options={question.options} setAnswer={setAnswer} />
+        );
       case "RANGE":
-        return <RangeOptions question={question} />;
+        return <RangeOptions setAnswer={setAnswer} />;
       case "TEXT":
         break;
     }

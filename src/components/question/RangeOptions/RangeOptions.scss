@@ -12,6 +12,16 @@
       width: 3.9em;
       height: 3.9em;
       background-color: $honesto-alabaster;
+      &:active {
+        background-color: $honesto-purple;
+      }
+    }
+    .hovered {
+      background-color: $honesto-purple;
+      opacity: 0.66;
+    }
+    .selected {
+      background-color: $honesto-purple;
     }
   }
 }
