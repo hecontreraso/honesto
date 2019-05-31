@@ -1,13 +1,24 @@
 import React, { useState } from "react";
+
 import "./MyFeedback.scss";
 
 import Answer from "components/myfeedback/Answer";
 import PersonRow from "components/shared/PersonRow";
 
-import { USERS } from "store/users";
+import { currentUserId } from "store/users";
+import * as S from "store/selectors";
 
 const MyFeedback: React.FC = () => {
-  const [selectedPerson, setSelectedPerson] = useState(-1);
+  const [selectedPersonId, setSelectedPersonId] = useState(-1);
+
+  function getAnswers() {
+    return S.getReceivedAnswers(currentUserId, selectedPersonId);
+  }
+
+  // Let's get the list of users who gave me feedback.
+  // Once networking is implemented, this probably would be easily done with an API call, filtering in backend
+  // I'm asumming that logged-in user is the one with id = 1
+  const users = S.getSenders(currentUserId);
 
   return (
     <div className="container my-feedback-component">
@@ -26,9 +37,9 @@ const MyFeedback: React.FC = () => {
           <div className="column-header">
             <span>Feedback received</span>
           </div>
-          {USERS.map((user, index) => (
-            <div onClick={() => setSelectedPerson(index)}>
-              <PersonRow selected={index == selectedPerson} user={user} />
+          {users.map((user, index) => (
+            <div onClick={() => setSelectedPersonId(user.id)} key={index}>
+              <PersonRow selected={user.id === selectedPersonId} user={user} />
             </div>
           ))}
         </div>
@@ -36,9 +47,11 @@ const MyFeedback: React.FC = () => {
           <div className="column-header">
             <span>Chris Trott’s Feedback</span>
           </div>
-          <Answer />
-          <Answer />
-          <Answer />
+          <div className="column-content">
+            {getAnswers().map((answer, index) => (
+              <Answer answer={answer} key={index} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

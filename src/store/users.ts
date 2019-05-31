@@ -1,9 +1,11 @@
 import { IUser } from "types/types";
 
+export const currentUserId = 1;
+
 export const USERS: IUser[] = [
   {
     id: 1,
-    name: "Chris Johnson",
+    name: "Jane Smith",
     thumbnailUrl: "http://placekitten.com/200/200"
   },
   {
@@ -24,6 +26,11 @@ export const USERS: IUser[] = [
   {
     id: 5,
     name: "Paul Carter",
+    thumbnailUrl: "http://placekitten.com/200/200"
+  },
+  {
+    id: 6,
+    name: "Chris Johnson",
     thumbnailUrl: "http://placekitten.com/200/200"
   }
 ];
