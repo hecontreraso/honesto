@@ -12,7 +12,7 @@ const PersonRow: React.FC = () => {
       </div>
 
       <div className="right">
-        <a className="button">Fill Out</a>
+        <button className="button">Fill Out</button>
       </div>
     </div>
   );

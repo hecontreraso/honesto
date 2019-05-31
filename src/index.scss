@@ -15,6 +15,7 @@ $button-background-color: $honesto-purple;
 $button-border-color: none;
 $button-color: white;
 $button-padding-horizontal: 1.5em;
+$button-disabled-background-color: #acb1b6;
 
 $navbar-background-color: $honesto-alabaster;
 
@@ -28,22 +29,14 @@ body {
   font-size: 16px;
 }
 
+button {
+  height: 48px;
+  width: 150px;
+}
+
 .button-normal {
   background-color: white;
   color: $honesto-black-pearl;
   border: 1px solid #d9dcde;
   font-weight: bold;
-  height: 48px;
-  width: 150px;
-}
-
-.button-disabled {
-  background-color: $honesto-black-pearl;
-  opacity: 0.33;
-  color: #ffffff;
-  height: 48px;
-  width: 150px;
-  &:hover {
-    color: #ffffff;
-  }
 }
