@@ -1,19 +1,24 @@
 import React from "react";
 
-import image from "./person-image.png";
 import "./PersonRow.scss";
+import { IUser } from "types/types";
 
-const PersonRow: React.FC = () => {
+interface Props {
+  onClick?: Function;
+  selected?: boolean;
+  user: IUser;
+}
+const PersonRow: React.FC<Props> = props => {
+  const { selected, user } = props;
+
+  const selectedClass = selected ? "person-row-selected" : "";
   return (
-    <div className="person-row">
+    <div className={`person-row ${selectedClass}`}>
       <div className="left">
-        <img src={image} alt="person" className="image" />
-        <span>Chris Johnson</span>
+        <img src={user.thumbnailUrl} alt="person" className="image" />
+        <span>{user.name}</span>
       </div>
-
-      <div className="right">
-        <button className="button">Fill Out</button>
-      </div>
+      {props.children}
     </div>
   );
 };

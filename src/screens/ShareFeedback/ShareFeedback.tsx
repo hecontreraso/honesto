@@ -3,7 +3,17 @@ import "./ShareFeedback.scss";
 
 import PersonRow from "components/shared/PersonRow";
 
+import { USERS } from "store/users";
+
 const ShareFeedback: React.FC = () => {
+  function renderButton() {
+    return (
+      <div className="right">
+        <button className="button">Fill Out</button>
+      </div>
+    );
+  }
+
   return (
     <div className="container share-feedback">
       <div className="level">
@@ -17,9 +27,9 @@ const ShareFeedback: React.FC = () => {
       </div>
 
       <div className="list-container">
-        <PersonRow />
-        <PersonRow />
-        <PersonRow />
+        {USERS.map(user => (
+          <PersonRow user={user}>{renderButton()}</PersonRow>
+        ))}
       </div>
     </div>
   );

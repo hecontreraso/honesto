@@ -1,0 +1,31 @@
+@import "index.scss";
+
+.answer-component {
+  align-items: center;
+  display: flex;
+
+  .answer-title {
+    flex: 1;
+    padding: 1em;
+    text-align: left;
+  }
+  .color-bars {
+    flex: 1;
+
+    .range-container {
+      display: flex;
+      justify-content: space-between;
+
+      .step {
+        flex: 1;
+        background-color: #f2f3f4;
+        border: 1px solid red;
+        margin: 0 2px;
+        height: 1.6em;
+      }
+      .active {
+        background-color: $honesto-purple;
+      }
+    }
+  }
+}

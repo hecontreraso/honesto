@@ -7,10 +7,20 @@
   justify-content: space-between;
 
   .image {
-    padding-right: 1.5em;
+    margin-right: 1.5em;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
   }
   .left {
     display: inherit;
     align-items: center;
   }
+  &:hover {
+    background-color: #fbf7fe;
+  }
+}
+
+.person-row-selected {
+  background-color: #f2f3f4;
 }
