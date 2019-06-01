@@ -13,6 +13,18 @@ const MyFeedback: React.FC = () => {
   // I'm asumming that logged-in user is the one with id = 1
   const users = S.getSenders(currentUserId);
 
+  if (users.length === 0)
+    return (
+      <div className="container my-feedback-component">
+        <div className="hero-container">
+          <h1 className="title">No feedback to display 🔮</h1>
+          <span>
+            There is no feedback to display at this time – check back in a bit!
+          </span>
+        </div>
+      </div>
+    );
+
   return <FeedbackPanel users={users} />;
 };
 

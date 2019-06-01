@@ -1,41 +1,11 @@
-@import "index.scss";
-
 .my-feedback-component {
-  display: flex;
-  flex-direction: column;
-
+  max-width: 50% !important;
   .hero-container {
-    padding: 3rem 0;
+    padding: 3rem;
+    margin-top: 3em;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-  }
-
-  .subcontainer {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    display: flex;
-  }
-  .left-section {
-    flex: 3;
-    border-right: 1px solid #d9dcde;
-    .column-header {
-      font-size: 0.66em;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 1em;
-      border-bottom: 1px solid #d9dcde;
-      text-align: left;
-    }
-  }
-  .right-section {
-    flex: 5;
-    .column-header {
-      color: $honesto-black-pearl;
-      font-size: 1.6em;
-      padding: 0.5em 1em;
-      text-align: left;
-      border-bottom: 1px solid #d9dcde;
-    }
   }
 }

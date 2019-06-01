@@ -20,7 +20,7 @@ const FeedbackPanel: React.FC<Props> = props => {
   }
 
   return (
-    <div className="container my-feedback-component">
+    <div className="container feedback-panel-component">
       <div className="level">
         <div className="level-left">
           <div className="hero-container">
