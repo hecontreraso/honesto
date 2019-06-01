@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 import "./Question.scss";
 import MultipleOptions from "components/question/MultipleOptions";
@@ -10,7 +10,8 @@ import Stars from "components/question/Stars";
 
 import { QUESTIONS } from "store/questions";
 
-function Question() {
+interface Props extends RouteComponentProps {}
+function Question(props: Props) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
   const progressEl = useRef<HTMLInputElement>(null);
@@ -50,7 +51,10 @@ function Question() {
   function nextQuestion(next: number) {
     setAnswer(null);
     if (next < QUESTIONS.length) setCurrentQuestionIndex(next);
-    else window.location.replace("/share?finished=true");
+    else props.history.push("/share?finished=true");
+
+    // else return <Redirect to="/" />;
+    // else window.location.replace("/share?finished=true");
   }
 
   const question = QUESTIONS[currentQuestionIndex];
@@ -84,7 +88,7 @@ function Question() {
           <div className="left">
             <div className="label text-small">Questions completed</div>
             <div>
-              {currentQuestionIndex + 1}/{QUESTIONS.length}
+              {currentQuestionIndex}/{QUESTIONS.length}
             </div>
           </div>
           <div className="right">

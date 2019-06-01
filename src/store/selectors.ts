@@ -3,7 +3,6 @@ import { uniq } from "lodash";
 import { ANSWERS } from "store/answers";
 import { USERS } from "store/users";
 import { QUESTIONS } from "store/questions";
-import { IQuestion } from "types/types";
 
 /**
  * Get an array of users who have given feedback to an user

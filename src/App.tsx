@@ -5,7 +5,7 @@ import Login from "screens/Login";
 import "./App.scss";
 
 const App: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className="App">
