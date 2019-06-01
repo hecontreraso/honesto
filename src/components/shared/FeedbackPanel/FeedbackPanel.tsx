@@ -59,7 +59,7 @@ function FeedbackPanel(props: Props) {
 
       <div className="subcontainer">
         <div className="left-section">
-          <div className="column-header">
+          <div className="column-header text-small">
             <span>Feedback {props.sent ? "sent" : "received"}</span>
           </div>
           {props.users.map((user, index) => (

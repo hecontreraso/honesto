@@ -75,10 +75,7 @@ function Answer({ answer }: Props) {
       }`}
     >
       <div className="answer-title">
-        <p>
-          How well did this person do X thing last month Lorem ipsum dolor sit
-          amet Lorem ipsum dolor?
-        </p>
+        <p>{question.title}</p>
       </div>
       <div className="answer">{renderFigure()}</div>
     </div>
