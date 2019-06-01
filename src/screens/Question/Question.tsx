@@ -6,6 +6,7 @@ import MultipleOptions from "components/question/MultipleOptions";
 import RangeOptions from "components/question/RangeOptions";
 import TextInput from "components/question/TextInput";
 import Navigation from "components/question/Navigation";
+import Stars from "components/question/Stars";
 
 import { QUESTIONS } from "store/questions";
 
@@ -76,8 +77,7 @@ function Question() {
             </div>
           </div>
           <div className="right">
-            <div>Stars</div>
-            <div>flag</div>
+            <Stars />
           </div>
         </div>
       </div>

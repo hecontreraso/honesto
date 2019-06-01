@@ -2,17 +2,22 @@ import React from "react";
 import "./Login.scss";
 import logo from "./logo.png";
 
-const Login: React.FC = () => {
+interface Props {
+  login: Function;
+}
+function Login({ login }: Props) {
   return (
     <div className="login-component">
       <div className="form-container">
         <img src={logo} className="logo" alt="logo" />
         <span className="title is-4">Honesto</span>
         <hr className="divider" />
-        <a className="button">Login with Google</a>
+        <a className="button" onClick={() => login()}>
+          Login with Google
+        </a>
       </div>
     </div>
   );
-};
+}
 
 export default Login;

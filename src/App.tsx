@@ -7,7 +7,11 @@ import "./App.scss";
 const App: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(true);
 
-  return <div className="App">{loggedIn ? <Main /> : <Login />}</div>;
+  return (
+    <div className="App">
+      {loggedIn ? <Main /> : <Login login={() => setLoggedIn(true)} />}
+    </div>
+  );
 };
 
 export default App;

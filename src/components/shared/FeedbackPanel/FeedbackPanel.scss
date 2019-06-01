@@ -11,6 +11,22 @@
     flex-direction: column;
   }
 
+  .header {
+    align-items: flex-end;
+    .date-selector {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      select {
+        width: 15em;
+      }
+      button {
+        margin-left: 1em;
+      }
+    }
+  }
+
   .subcontainer {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -19,10 +35,10 @@
     flex: 3;
     border-right: 1px solid #d9dcde;
     .column-header {
-      font-size: 0.66em;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: bold;
+      // font-size: 0.66em;
+      // letter-spacing: 0.15em;
+      // text-transform: uppercase;
+      // font-weight: bold;
       padding: 1em;
       border-bottom: 1px solid #d9dcde;
       text-align: left;

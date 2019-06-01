@@ -43,5 +43,11 @@ button {
   background-color: white;
   color: $honesto-black-pearl;
   border: 1px solid #d9dcde;
-  // font-weight: bold;
+}
+
+.text-small {
+  font-size: 0.66em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: bold;
 }

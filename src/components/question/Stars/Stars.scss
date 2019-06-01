@@ -1,0 +1,30 @@
+.stars-component {
+  align-items: center;
+  display: flex;
+
+  .star {
+    width: 29px;
+    height: 28px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .star-selected {
+    background-image: url(./images/star-selected.svg);
+  }
+
+  .star-unselected {
+    background-image: url(./images/star-unselected.svg);
+  }
+
+  .flag {
+    width: 20px;
+    height: 24px;
+    margin-left: 1em;
+    background-image: url(./images/flag-unselected.svg);
+    &:hover {
+      cursor: pointer;
+      background-image: url(./images/flag-selected.svg);
+    }
+  }
+}

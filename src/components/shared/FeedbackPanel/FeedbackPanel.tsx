@@ -23,7 +23,7 @@ function FeedbackPanel(props: Props) {
   useEffect(() => {
     if (props.selected) {
       const id = parseInt(props.selected);
-      if (id !== NaN) {
+      if (!isNaN(id)) {
         setSelectedPersonId(id);
       }
     }
@@ -43,14 +43,25 @@ function FeedbackPanel(props: Props) {
 
   return (
     <div className="container feedback-panel-component">
-      <div className="level">
+      <div className="level header">
         <div className="level-left">
           <div className="hero-container">
             <h1 className="title">{props.sent ? "Team" : "My"} Feedback</h1>
           </div>
         </div>
 
-        <div className="level-right">Feedback period</div>
+        <div className="level-right date-selector">
+          <span className="text-small">Feedback period</span>
+          <div>
+            <div className="select">
+              <select>
+                <option>October 2018</option>
+                <option>November 2018</option>
+              </select>
+            </div>
+            <button className="button">Publish Feedback</button>
+          </div>
+        </div>
       </div>
 
       <div className="subcontainer">
