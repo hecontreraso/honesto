@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Question.scss";
@@ -13,6 +13,15 @@ import { QUESTIONS } from "store/questions";
 function Question() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
+  const progressEl = useRef<HTMLInputElement>(null);
+
+  /**
+   * Hook used to move progress bar. Progress bar could probably be a component
+   */
+  useEffect(() => {
+    const progress = (currentQuestionIndex / QUESTIONS.length) * 100;
+    if (progressEl.current) progressEl.current.style.width = `${progress}%`;
+  });
 
   function renderQuestion() {
     const question = QUESTIONS[currentQuestionIndex];
@@ -68,7 +77,9 @@ function Question() {
           setCurrentQuestionIndex={nextQuestion}
         />
 
-        <div>Progress</div>
+        <div className="progress-bar">
+          <div className="progress-bar-completed" ref={progressEl} />
+        </div>
         <div className="question-footer">
           <div className="left">
             <div className="label text-small">Questions completed</div>

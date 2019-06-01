@@ -13,18 +13,6 @@
 
   .header {
     align-items: flex-end;
-    .date-selector {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      select {
-        width: 15em;
-      }
-      button {
-        margin-left: 1em;
-      }
-    }
   }
 
   .subcontainer {

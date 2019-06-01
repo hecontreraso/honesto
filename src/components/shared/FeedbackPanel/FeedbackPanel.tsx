@@ -8,6 +8,7 @@ import PersonRow from "components/shared/PersonRow";
 import * as S from "store/selectors";
 import { currentUserId } from "store/users";
 import { IUser, IAnswer } from "types/types";
+import DateSelector from "components/shared/DateSelector";
 
 interface Props {
   users: IUser[];
@@ -50,17 +51,8 @@ function FeedbackPanel(props: Props) {
           </div>
         </div>
 
-        <div className="level-right date-selector">
-          <span className="text-small">Feedback period</span>
-          <div>
-            <div className="select">
-              <select>
-                <option>October 2018</option>
-                <option>November 2018</option>
-              </select>
-            </div>
-            <button className="button">Publish Feedback</button>
-          </div>
+        <div className="level-right">
+          <DateSelector />
         </div>
       </div>
 

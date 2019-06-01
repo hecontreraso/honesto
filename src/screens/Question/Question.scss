@@ -26,6 +26,19 @@
       text-align: left;
     }
 
+    .progress-bar {
+      height: 5px;
+      width: 100%;
+      background-color: $honesto-alabaster;
+      margin-bottom: 1em;
+    }
+    .progress-bar-completed {
+      height: 5px;
+      width: 50%;
+      background-color: aqua;
+      margin-bottom: 1em;
+    }
+
     .question-footer {
       width: 100%;
       display: flex;
