@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/honesto/static/css/main.cb5f6a6d.chunk.css",
+    "main.js": "/honesto/static/js/main.9d7d30ea.chunk.js",
+    "main.js.map": "/honesto/static/js/main.9d7d30ea.chunk.js.map",
+    "runtime~main.js": "/honesto/static/js/runtime~main.03fbb97a.js",
+    "runtime~main.js.map": "/honesto/static/js/runtime~main.03fbb97a.js.map",
+    "static/js/2.af543d55.chunk.js": "/honesto/static/js/2.af543d55.chunk.js",
+    "static/js/2.af543d55.chunk.js.map": "/honesto/static/js/2.af543d55.chunk.js.map",
+    "index.html": "/honesto/index.html",
+    "precache-manifest.adfb105d1250d3fe11b0b918982acb72.js": "/honesto/precache-manifest.adfb105d1250d3fe11b0b918982acb72.js",
+    "service-worker.js": "/honesto/service-worker.js",
+    "static/css/main.cb5f6a6d.chunk.css.map": "/honesto/static/css/main.cb5f6a6d.chunk.css.map",
+    "static/media/Login.scss": "/honesto/static/media/background.bcec75c9.png",
+    "static/media/Stars.scss": "/honesto/static/media/star-unselected.457fbba4.svg"
+  }
+}
