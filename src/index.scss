@@ -29,6 +29,10 @@ body {
   font-size: 16px;
 }
 
+a {
+  color: $honesto-black-pearl;
+}
+
 button {
   height: 48px;
   width: 150px;
@@ -38,5 +42,5 @@ button {
   background-color: white;
   color: $honesto-black-pearl;
   border: 1px solid #d9dcde;
-  font-weight: bold;
+  // font-weight: bold;
 }

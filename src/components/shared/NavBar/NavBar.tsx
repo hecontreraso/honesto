@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
             <Link className="navbar-item" to="/myfeedback">
               My Feedback
             </Link>
-            <Link className="navbar-item" to="/share">
+            <Link className="navbar-item" to="/teamfeedback">
               Team Feedback
             </Link>
             <Link className="navbar-item" to="/myfeedback">

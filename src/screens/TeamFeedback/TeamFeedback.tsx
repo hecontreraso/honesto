@@ -1,7 +1,7 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
 
-import "./MyFeedback.scss";
+import "./TeamFeedback.scss";
 
 import FeedbackPanel from "components/shared/FeedbackPanel";
 
@@ -9,10 +9,10 @@ import { currentUserId } from "store/users";
 import * as S from "store/selectors";
 
 interface Props extends RouteComponentProps {}
-function MyFeedback({ location }: Props) {
-  // Let's get the list of users who gave me feedback.
+function TeamFeedback({ location }: Props) {
+  // Let's get the list of users who recieve feedback from current user
   // Once networking is implemented, this probably would be easily done with an API call, filtering in backend
-  const users = S.getSenders(currentUserId);
+  const users = S.getReceivers(currentUserId);
   if (users.length === 0)
     return (
       <div className="container my-feedback-component">
@@ -29,10 +29,10 @@ function MyFeedback({ location }: Props) {
   return (
     <FeedbackPanel
       users={users}
-      sent={false}
+      sent={true}
       selected={params.get("selected")}
     />
   );
 }
 
-export default MyFeedback;
+export default TeamFeedback;

@@ -16,9 +16,20 @@ export const getSenders = (userId: number) => {
 };
 
 /**
+ * Get an array of users who have received feedback by an user
+ */
+export const getReceivers = (userId: number) => {
+  const receiverIds = ANSWERS.filter(answer => answer.senderId === userId).map(
+    answer => answer.receiverId
+  );
+  let userIds = uniq(receiverIds);
+  return USERS.filter(user => userIds.includes(user.id));
+};
+
+/**
  * Get an array of answers received by an user
  */
-export const getReceivedAnswers = (receiverId: number, senderId: number) => {
+export const getAnswers = (senderId: number, receiverId: number) => {
   return ANSWERS.filter(
     answer => answer.receiverId === receiverId && answer.senderId === senderId
   );

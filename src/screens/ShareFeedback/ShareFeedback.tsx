@@ -1,17 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./ShareFeedback.scss";
 
 import PersonRow from "components/shared/PersonRow";
 
-import { USERS } from "store/users";
+import { USERS, currentUserId } from "store/users";
+import * as S from "store/selectors";
 
 const ShareFeedback: React.FC = () => {
-  function renderButton() {
+  function renderButton(userId: number) {
+    // We need to know if the user has been already filled out
+    const isFilled = S.getAnswers(currentUserId, userId).length > 0;
+
     return (
       <div className="right">
-        <button className="button">Fill Out</button>
+        <Link to={`/teamfeedback?selected=${userId}`}>
+          <button className={`button ${isFilled ? "button-normal" : ""}`}>
+            {isFilled ? "View Submission" : "Fill Out"}
+          </button>
+        </Link>
       </div>
     );
+  }
+
+  function getUsers() {
+    return USERS.filter(user => user.id !== currentUserId);
   }
 
   return (
@@ -27,8 +41,10 @@ const ShareFeedback: React.FC = () => {
       </div>
 
       <div className="list-container">
-        {USERS.map(user => (
-          <PersonRow user={user}>{renderButton()}</PersonRow>
+        {getUsers().map((user, index) => (
+          <PersonRow key={index} user={user}>
+            {renderButton(user.id)}
+          </PersonRow>
         ))}
       </div>
     </div>

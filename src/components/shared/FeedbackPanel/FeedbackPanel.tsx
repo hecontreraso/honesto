@@ -1,22 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./FeedbackPanel.scss";
 
 import Answer from "components/myfeedback/Answer";
 import PersonRow from "components/shared/PersonRow";
 
-import { currentUserId } from "store/users";
 import * as S from "store/selectors";
-import { IUser } from "types/types";
+import { currentUserId } from "store/users";
+import { IUser, IAnswer } from "types/types";
 
 interface Props {
   users: IUser[];
+  sent: boolean;
+  selected: string | null;
 }
-const FeedbackPanel: React.FC<Props> = props => {
+function FeedbackPanel(props: Props) {
   const [selectedPersonId, setSelectedPersonId] = useState(-1);
 
+  /**
+   * If a "selected" param is received in URL, select that user in component
+   */
+  useEffect(() => {
+    if (props.selected) {
+      const id = parseInt(props.selected);
+      if (id !== NaN) {
+        setSelectedPersonId(id);
+      }
+    }
+  }, [props.selected]);
+
   function getAnswers() {
-    return S.getReceivedAnswers(currentUserId, selectedPersonId);
+    let senderId, receiverId;
+    if (props.sent) {
+      senderId = currentUserId;
+      receiverId = selectedPersonId;
+    } else {
+      senderId = selectedPersonId;
+      receiverId = currentUserId;
+    }
+    return S.getAnswers(senderId, receiverId);
   }
 
   return (
@@ -24,7 +46,7 @@ const FeedbackPanel: React.FC<Props> = props => {
       <div className="level">
         <div className="level-left">
           <div className="hero-container">
-            <h1 className="title">My Feedback</h1>
+            <h1 className="title">{props.sent ? "Team" : "My"} Feedback</h1>
           </div>
         </div>
 
@@ -34,7 +56,7 @@ const FeedbackPanel: React.FC<Props> = props => {
       <div className="subcontainer">
         <div className="left-section">
           <div className="column-header">
-            <span>Feedback received</span>
+            <span>Feedback {props.sent ? "sent" : "received"}</span>
           </div>
           {props.users.map((user, index) => (
             <div onClick={() => setSelectedPersonId(user.id)} key={index}>
@@ -43,11 +65,11 @@ const FeedbackPanel: React.FC<Props> = props => {
           ))}
         </div>
         <div className="right-section">
-          <div className="column-header">
+          {/* <div className="column-header">
             <span>Chris Trott’s Feedback</span>
-          </div>
+          </div> */}
           <div className="column-content">
-            {getAnswers().map((answer, index) => (
+            {getAnswers().map((answer: IAnswer, index: number) => (
               <Answer answer={answer} key={index} />
             ))}
           </div>
@@ -55,6 +77,6 @@ const FeedbackPanel: React.FC<Props> = props => {
       </div>
     </div>
   );
-};
+}
 
 export default FeedbackPanel;
