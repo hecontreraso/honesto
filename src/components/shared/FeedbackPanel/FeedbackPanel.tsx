@@ -51,8 +51,9 @@ function FeedbackPanel(props: Props) {
           </div>
         </div>
 
-        <div className="level-right">
+        <div className="level-right right">
           <DateSelector />
+          <button className="button right-button">Publish Feedback</button>
         </div>
       </div>
 

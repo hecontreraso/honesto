@@ -1,12 +1,15 @@
 .share-feedback {
   max-width: 50% !important;
-  .hero-container {
-    padding: 3rem 1em 0;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-  }
 
+  .header-container {
+    align-items: flex-end;
+    .hero-container {
+      padding: 3rem 1em 0;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .list-container {
     display: flex;
     flex-direction: column;

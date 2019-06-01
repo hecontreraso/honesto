@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./ShareFeedback.scss";
 
+import DateSelector from "components/shared/DateSelector";
 import PersonRow from "components/shared/PersonRow";
 
 import { USERS, currentUserId } from "store/users";
@@ -50,14 +51,18 @@ function ShareFeedback({ location }: Props) {
           </div>
         </div>
 
-        {!finished && <div className="level-right">Feedback period</div>}
+        {!finished && (
+          <div className="level-right">
+            <DateSelector />
+          </div>
+        )}
       </>
     );
   }
 
   return (
     <div className="container share-feedback">
-      <div className="level">{renderHeader()}</div>
+      <div className="level header-container">{renderHeader()}</div>
 
       <div className="list-container">
         {getUsers().map((user, index) => (
