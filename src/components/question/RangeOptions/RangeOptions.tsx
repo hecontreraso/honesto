@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IQuestion } from "types/types";
 
 import "./RangeOptions.scss";
 

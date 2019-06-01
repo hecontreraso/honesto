@@ -22,5 +22,6 @@ export interface IAnswer {
   questionId: number;
   receiverId: number; // Who receives feedback
   senderId: number; // Who gives feedback
-  answer: number | string; // Can be the option index, the range number or the text entered
+  option?: number; // Option index
+  answer?: string; // Text entered or option value
 }

@@ -25,5 +25,5 @@ export const getReceivedAnswers = (receiverId: number, senderId: number) => {
 };
 
 export const getQuestionById = (questionId: number) => {
-  return QUESTIONS.find(question => question.id == questionId);
+  return QUESTIONS.find(question => question.id === questionId);
 };

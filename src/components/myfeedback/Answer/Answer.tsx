@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Answer.scss";
 import { IAnswer } from "types/types";
 import * as S from "store/selectors";
@@ -14,11 +14,27 @@ function Answer({ answer }: Props) {
 
   if (!question) return null;
 
-  function renderRange(size: Number) {
+  function renderRange(size: number) {
+    const getColor = () => {
+      if (answer.option === undefined) return;
+
+      const percentage = (answer.option + 1) / size;
+      let colorClass;
+      if (percentage < 0.25) colorClass = "very-low";
+      else if (percentage < 0.5) colorClass = "low";
+      else if (percentage < 0.75) colorClass = "medium";
+      else colorClass = "full";
+      return colorClass;
+    };
+
+    const option = answer.option || 0;
     return (
       <div className="range-container">
         {[...Array(size)].map((_, index) => (
-          <div className="step" key={index} />
+          <div
+            className={`step ${index <= option ? getColor() : ""}`}
+            key={index}
+          />
         ))}
       </div>
     );
@@ -41,11 +57,6 @@ function Answer({ answer }: Props) {
           </>
         );
     }
-
-    // if type === 'multiple'
-    // rangeSize = question.options.size
-    // else if type === 'range'
-    // rangeSize = 10
   }
 
   return (

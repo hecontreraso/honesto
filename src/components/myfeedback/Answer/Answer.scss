@@ -1,5 +1,10 @@
 @import "index.scss";
 
+$green: #2bbf6a;
+$yellow: #f5dd07;
+$orange: #ff8c21;
+$red: #de521d;
+
 .answer-component {
   align-items: center;
   display: flex;
@@ -24,12 +29,20 @@
       .step {
         flex: 1;
         background-color: #f2f3f4;
-        border: 1px solid red;
         margin: 0 2px;
         height: 1.6em;
       }
-      .active {
-        background-color: $honesto-purple;
+      .full {
+        background-color: $green;
+      }
+      .medium {
+        background-color: $yellow;
+      }
+      .low {
+        background-color: $orange;
+      }
+      .very-low {
+        background-color: $red;
       }
     }
   }
