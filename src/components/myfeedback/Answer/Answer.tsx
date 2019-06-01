@@ -7,14 +7,14 @@ interface Props {
   answer: IAnswer;
 }
 function Answer({ answer }: Props) {
-  //   const [selectedPerson, setSelectedPerson] = useState(-1);
-
   // Get question
   const question = S.getQuestionById(answer.questionId);
 
   if (!question) return null;
 
   function renderRange(size: number) {
+    if (!question) return;
+
     const getColor = () => {
       if (answer.option === undefined) return;
 
@@ -28,11 +28,20 @@ function Answer({ answer }: Props) {
     };
 
     const option = answer.option || 0;
+
+    const dataTooltip = (index: number) => {
+      if (!question.options) return;
+      return question.options[index];
+    };
+
     return (
       <div className="range-container">
         {[...Array(size)].map((_, index) => (
           <div
-            className={`step ${index <= option ? getColor() : ""}`}
+            className={`step ${
+              question.type === "MULTIPLE" ? "tooltip is-tooltip-multiline" : ""
+            } ${index <= option ? getColor() : ""}`}
+            data-tooltip={dataTooltip(index)}
             key={index}
           />
         ))}

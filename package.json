@@ -9,6 +9,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.3",
     "bulma": "^0.7.5",
+    "bulma-extensions": "^6.2.7",
     "lodash": "^4.17.11",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
