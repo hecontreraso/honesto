@@ -10,7 +10,7 @@ import Navigation from "components/question/Navigation";
 import { QUESTIONS } from "store/questions";
 
 function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(2);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState(null);
 
   function renderQuestion() {
@@ -37,6 +37,12 @@ function Question() {
       );
   }
 
+  function nextQuestion(next: number) {
+    setAnswer(null);
+    if (next < QUESTIONS.length) setCurrentQuestionIndex(next);
+    else window.location.replace("/share?finished=true");
+  }
+
   const question = QUESTIONS[currentQuestionIndex];
   return (
     <div className="container question-component">
@@ -58,7 +64,7 @@ function Question() {
         <Navigation
           answer={answer}
           currentQuestionIndex={currentQuestionIndex}
-          setCurrentQuestionIndex={setCurrentQuestionIndex}
+          setCurrentQuestionIndex={nextQuestion}
         />
 
         <div>Progress</div>

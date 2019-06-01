@@ -1,4 +1,5 @@
 import React from "react";
+import { RouteComponentProps } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "./ShareFeedback.scss";
@@ -8,14 +9,16 @@ import PersonRow from "components/shared/PersonRow";
 import { USERS, currentUserId } from "store/users";
 import * as S from "store/selectors";
 
-const ShareFeedback: React.FC = () => {
+interface Props extends RouteComponentProps {}
+function ShareFeedback({ location }: Props) {
   function renderButton(userId: number) {
     // We need to know if the user has been already filled out
     const isFilled = S.getAnswers(currentUserId, userId).length > 0;
+    const linkUrl = isFilled ? `/teamfeedback?selected=${userId}` : "question";
 
     return (
       <div className="right">
-        <Link to={`/teamfeedback?selected=${userId}`}>
+        <Link to={linkUrl}>
           <button className={`button ${isFilled ? "button-normal" : ""}`}>
             {isFilled ? "View Submission" : "Fill Out"}
           </button>
@@ -28,17 +31,33 @@ const ShareFeedback: React.FC = () => {
     return USERS.filter(user => user.id !== currentUserId);
   }
 
-  return (
-    <div className="container share-feedback">
-      <div className="level">
+  function renderHeader() {
+    const params = new URLSearchParams(location.search);
+    const finished = params.get("finished");
+
+    return (
+      <>
         <div className="level-left">
           <div className="hero-container">
-            <h1 className="title">Share Feedback</h1>
+            <h1 className="title">
+              {finished
+                ? "Thank you for sharing your feedback!"
+                : "Share Feedback"}
+            </h1>
+            {finished && (
+              <h3>Continue to give feedback to other team members.</h3>
+            )}
           </div>
         </div>
 
-        <div className="level-right">Feedback period</div>
-      </div>
+        {!finished && <div className="level-right">Feedback period</div>}
+      </>
+    );
+  }
+
+  return (
+    <div className="container share-feedback">
+      <div className="level">{renderHeader()}</div>
 
       <div className="list-container">
         {getUsers().map((user, index) => (
@@ -49,6 +68,6 @@ const ShareFeedback: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ShareFeedback;
